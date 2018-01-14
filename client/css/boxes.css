@@ -1,0 +1,59 @@
+
+.container, .panel {
+
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.panel {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.subpanel{
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.button{
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  color: inherit;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: inherit;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+  box-sizing: border-box;
+
+}
+
+.button:hover{
+  box-shadow:0 3px 7px 0 rgba(0,0,0,0.3);
+  transition: all 0.3s;
+  transform: scale(1.03);
+}
+
+
+.linkList {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+#mapa{
+
+  width: 100%;
+  height: 96vh;
+  display: block;
+  box-sizing: border-box;
+}
+
+.footerSec {
+  border-top: 6px solid #d03e35;
+  min-height: 130px;
+  padding: 2em;
+  box-sizing: border-box;
+}

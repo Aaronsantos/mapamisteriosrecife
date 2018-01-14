@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fontFace.css">
+    <link rel="stylesheet" href="css/text.css">
+    <link rel="stylesheet" href="css/boxes.css">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/herosec.css">
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <header class="container colorBgLigthGrey heroSec">
+          <h1 class="textdisplay3 bannerLogo">Mapa de mistérios do Recife</h1>
+          <div class="panel subsec">
+            <a href="#" class="button textbutton colorBgBlue">Modo Explorador</a>
+            <p class="texttitle subpanel">Para você que quer se aventurar em busca de assombrações</p>
+          </div>
+          <div class="panel subsec">
+            <a href="#" class="button textbutton colorBgBlue">Modo Explorador</a>
+            <p class="texttitle subpanel">Para você que quer se aventurar em busca de assombrações</p>
+          </div>
+    </header>
+    <main>
+      <div id="map"></div>
+
+    </main>
+    <h3>My Google Maps Demo</h3>
+
+
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2uPawOPYriT7y7vdd0OeNp_JButueuvE&callback=initMap">
+    </script>
+    <script src="js/app/models/Assombracao.js"></script>
+    <script src="js/app/services/LocationService.js"></script>
+    <script src="js/app/services/GetKey.js"></script>
+    <script src="js/app/models/Location.js"></script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+
+.textdisplay4{
+  font-family: 'roboto';
+  font-weight: lighter;
+  font-size: 112px;
+}
+
+.textdisplay3 {
+  font-family: 'roboto';
+  font-weight: normal;
+  font-size: 56px;
+}
+
+.textdisplay2 {
+  font-family: 'roboto';
+  font-weight: normal;
+  font-size: 45px;
+}
+
+.textdisplay1 {
+  font-family: 'roboto';
+  font-weight: normal;
+  font-size: 34px;
+}
+
+.textheadline {
+  font-family: 'roboto';
+  font-weight: normal;
+  font-size: 24px;
+}
+
+.texttitle {
+  font-family: 'roboto';
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.textsubheading {
+  font-family: 'roboto';
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.textbody2{
+    font-family: 'roboto';
+    font-weight: 300;
+    font-size: 21px;
+}
+
+.textbody1{
+      font-family: 'roboto';
+      font-weight: normal;
+      font-size: 21px;
+}
+
+.textcaption {
+        font-family: 'roboto';
+        font-weight: normal;
+        font-size: 12px;
+}
+
+.textbutton {
+        font-family: 'roboto';
+        font-weight: 300;
+        font-size: 15px;
+        text-transform: uppercase;
+}
+
+@media (min-width: 700px)
+{
+
+  .textsubheading {
+    font-family: 'roboto';
+    font-weight: normal;
+    font-size: 18px;
+  }
+
+  .textbody2{
+      font-family: 'roboto';
+      font-weight: 300;
+      font-size: 15px;
+  }
+
+  .textbody1{
+        font-family: 'roboto';
+        font-weight: normal;
+        font-size: 15px;
+  }
+}
+
+.linkInline {
+  display: inline;
+}
+
+.textBlock{
+  display: block;
+}
+
+
+.alignCenter{
+  text-align: center
+}
+
+.alingRight{
+  text-align: right;
+}
+
+.alignLeft{
+  text-align: left;
+}

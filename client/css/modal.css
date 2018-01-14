@@ -1,0 +1,70 @@
+.modal{
+display:none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(154,137,88,0.4); /* Black w/ opacity */
+padding-top: 5%;
+padding-bottom: 5%;
+box-sizing: border-box;
+transition: all 0.5s;
+}
+
+.infoModal{
+  display: flex;
+  flex-flow: wrap;
+  width: 80%;
+  margin: auto;
+  max-height: 90%;
+  overflow-y: auto;
+  box-sizing: border-box;
+
+}
+
+.infoModal header{
+  padding: 1em;
+  width: 100%;
+  box-sizing: border-box;
+
+
+}
+
+.infoModal section{
+  width: 50%;
+  padding: 1em;
+  box-sizing: border-box;
+
+}
+
+.infoModal .picsSec {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.infoModal .picSec img{
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 750px){
+  .infoModal {
+    width: 90%;
+    flex-flow: column;
+  }
+
+  .infoModal section{
+    width: 100%;
+  }
+
+  .infoModal .picSec{
+    width: 100%;
+  }
+
+}

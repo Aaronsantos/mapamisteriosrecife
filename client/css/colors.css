@@ -1,0 +1,30 @@
+
+.colorBgLigthGrey{
+  /*background-color: #9c9c9c;*/
+  background-color: #282828;
+}
+
+.colorBgRed{
+  /*background-color: #5c7a8a;*/
+  background-color: #d03e35;
+}
+
+.colorBgBrown{
+  background-color: #9d8958;
+}
+
+.colorTxtRed {
+  color: #d03e35;
+}
+
+.colorTxtWhite{
+  color: white;
+}
+
+.colorTxtBrown{
+  color: #9d8958;
+}
+
+.colorBgWhite{
+  background-color: white;
+}
