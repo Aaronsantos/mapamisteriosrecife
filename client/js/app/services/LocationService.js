@@ -12,7 +12,6 @@ class LocationService{
   static isInSpaceRange(pointLocation, userLocation, range){
 
     let unit = 0.000009;
-    console.log(range)
     let latMax = pointLocation.lat + (unit * range);
     let latMin = pointLocation.lat - (unit * range);
     let lngMax = pointLocation.lng + (unit * range);
@@ -26,16 +25,21 @@ class LocationService{
 
 
   static _PromiseUserLocation(){
-
-
-  }
-
-  static getUserLocation(){
-
     return new Promise(function (resolve, reject) {
       navigator.geolocation.getCurrentPosition(resolve, reject);
     });
+  }
 
+  static getUserLocation(){
+    return new Promise(function (resolve, reject) {
+
+      LocationService._PromiseUserLocation()
+      .then(  loc => {
+        let user = {lat : loc.coords.latitude, lng : loc.coords.longitude}
+        resolve(user)
+      } )
+      .catch(e => reject(e))
+    })
   }
 
   static coordToName(loc) {

@@ -1,17 +1,17 @@
 class MapView{
 
   static generateMap(position, style, tag, list) {
-    console.log(position)
+
     var map = new google.maps.Map(tag, {
       zoom: 19,
       center: position,
       styles: style
     });
     //teste renderizar marcador
-    let userMarker = new google.maps.Marker({
-      position: position,
-      map: map
-    })
+    // let userMarker = new google.maps.Marker({
+    //   position: position,
+    //   map: map
+    // })
 
     list.forEach( a => {
 
@@ -23,9 +23,16 @@ class MapView{
         position: a.coords,
         map: map
       })
-      marker.addListener('click', function(){
-        modalHTML.geraModalInfo(a)
-      })
+
+      if(LocationService.isInSpaceRange(a.coords, position, a.range)) {
+        marker.addListener('click', function(){
+          modalHTML.geraModalInfo(a)
+        })
+      }else {
+        marker.addListener('click', function(){
+          modalHTML.geraModalDistante(a)
+        })
+      }
 
 
     })

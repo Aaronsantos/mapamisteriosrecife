@@ -15,6 +15,15 @@ class ListaAssombracao {
     return [].concat(this._assombracoes);
   }
 
+  getAssombracaoById(local,id) {
+
+    let a = this._assombracoes.find(as => as.id == id)
+    if(a && (LocationService.isInSpaceRange(a.coords, local,a.range) || a.status == true))
+      return a
+    else
+      return null
+  }
+
   remove(id){
 
     for( a in this._assombracoes){

@@ -71,8 +71,8 @@
       let mapController
       LocationService.getUserLocation()
         .then(location => {
-            let user = {lat: location.coords.latitude, lng: location.coords.longitude}
-            mapController = new MapController(user, AssombracoesRepo.getAssombracoes())
+
+            mapController = new MapController(location, AssombracoesRepo.getAssombracoes())
             mapController.refreshMap()
         })
         .catch(erro => {

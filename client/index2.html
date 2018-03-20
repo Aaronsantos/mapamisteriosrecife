@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fontFace.css">
+    <link rel="stylesheet" href="css/text.css">
+    <link rel="stylesheet" href="css/boxes.css">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/stage.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/menu.css">
+  </head>
+  <body>
+
+    <nav class="mainMenu">
+      <div class="menuContent ">
+        <ul>
+          <li class="menuListItem textbutton"> <a class="colorTxtWhite" href="#"> <img class="menuIcon" src="img/icon.png" alt="">  <p>Por perto</p></a></li>
+          <li class="menuListItem textbutton">  <a class="colorTxtWhite" href="#"> <img class="menuIcon" src="img/icon.png" alt=""> <p>Catálogo</p></a></li>
+          <li class="menuListItem textbutton">  <a class="colorTxtWhite" href="#"> <img class="menuIcon" src="img/icon.png" alt=""> <p>Sobre</p></a></li>
+        </ul>
+      </div>
+    </nav>
+    <header class="container colorBgLigthGrey stage">
+          <img src="img/logo.svg" alt="Mapa de mistérios do Recife" class="bannerLogo">
+    </header>
+
+    <script src="js/app/models/Assombracao.js"></script>
+    <script src="js/app/models/ListaAssombracao.js"></script>
+    <script src="js/app/services/LocationService.js"></script>
+    <script src="js/app/services/GetKey.js"></script>
+    <script src="js/app/models/Location.js"></script>
+    <script src="js/app/controllers/MapController.js"></script>
+    <script src="js/app/views/MapView.js"></script>
+    <script src="js/app/views/modal.js"></script>
+    <script src="js/app/services/ConnectionFactory.js"></script>
+    <script src="js/app/dao/Dao.js"></script>
+    <script src="js/app/dao/LogDao.js"></script>
+    <script src="js/app/dao/VersionDao.js"></script>
+    <script src="js/app/dao/AssombracaoDao.js"></script>
+    <script src="js/app/services/HttpService.js"></script>
+    <script src="js/app/services/AssombracaoService.js"></script>
+    <script src="js/app/app.js">
+
+    </script>
+    <script type="text/javascript">
+    //TESTE DO BD
+      fetch("https://mapa-misterios-recife.firebaseio.com/assombracoes.json")
+      .then( resp => resp.json())
+      .then(assombracoes => {
+        console.log(assombracoes)
+      })
+    </script>
+
+  <!--  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2uPawOPYriT7y7vdd0OeNp_JButueuvE">
+  </script> -->
+
+  </body>
+</html>

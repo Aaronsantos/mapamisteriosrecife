@@ -1,22 +1,61 @@
 
 .mainMenu{
-  width: 100%;
   display: flex;
-  height: 40px;
+  height: inherit;
   display: flex;
   align-items: center;
-  padding: 0 50px;
-  /*border-bottom: 4px solid white;*/
-  box-sizing: border-box;
-  flex-direction: row-reverse;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #282828;
 }
 
 .menuContent {
   display: block;
   list-style: none;
+  margin: auto;
+  padding: 10px 0 10px 0;
 }
 
 .menuListItem {
+
   display: inline-block;
-  margin-right: 15px;
+  padding: 3px;
+  margin-left: 4vw;
+}
+
+
+.menuIcon {
+  height: 10vw;
+  display: block;
+  margin-bottom: 8px;
+  margin: auto;
+  margin-bottom: 1.5vw;
+}
+
+@media (min-width: 500px and max-width: 900px){
+  .menuListItem {
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 800px) {
+  .mainMenu {
+    top:0;
+    bottom: auto;
+    background-color:  #d03e35;
+  }
+
+  .menuContent{
+    margin-right: 0;
+    padding: 10px;
+  }
+
+  .menuListItem{
+    margin-left: 2em;
+  }
+
+  .menuIcon{
+    display: none;
+  }
 }
