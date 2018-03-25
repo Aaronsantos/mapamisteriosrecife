@@ -6,46 +6,26 @@ class AssombracaoService {
   }
 
   requestAssombracoes() {
-
-    //analisa se precisa fazer requisição
     console.log('Requisitando assombrações')
-    return this._getRemoteVersion()
-      .then( flag => {
-        if(flag[0])
-          throw new Error('Armazenamento local já atualizado')
-        else
-          // INFERNOOOOOOo!!!!!!
-          return this._http.get('https://mapa-misterios-recife.firebaseio.com/assombracoes.json').then(list => [list].concat(flag))
+
+    return Promise.all([this._http.get('https://mapa-misterios-recife.firebaseio.com/assombracoes.json'), this._syncLocalStorage()])
+    .then( response => {
+
+      let assombracoes = response[0]
+      let assombracoesDescobertas = response[1]
+
+      let listaAssombracao = [] //IMPLEMENTAR CRIANDO INSTANCIA DE ASSOMBRACAO
+
+      Object.keys(assombracoes).forEach( key => {
+        listaAssombracao.push( new Assombracao(key, assombracoes[key], assombracoesDescobertas.includes(response[0][key].id)) )
       })
+      return new ListaAssombracao(listaAssombracao)
+    })
   }
 
-  syncLocalStorage() {
+  _syncLocalStorage() {
     console.log('entrou')
-    return this.requestAssombracoes()
-      .then(list => {
-          ConnectionFactory.getConnection(c => {
-            logDao = new logDao(c)
-            asDao = new AssombracaoDao(c)
-            console.log('Daos criados')
-
-            Promise.all([
-              logDao.delData(),
-              list[0].forEach(a => asDao.add(a)), //FUNCIONA? 
-              logDao.add(list[1])
-            ])
-            .then(result => {
-              console.log('Realizadas as promisses')
-              console.log(result.join('\n'))
-              return true
-            })
-            .catch( e => {
-              console.log(e)
-              return e
-            })
-          })
-      })
-
-
+    return [].concat(ConnectionFactory.getConnection().then( c =>  new LogDao(c).getData() ) )
   }
 
   _getRemoteVersion() {

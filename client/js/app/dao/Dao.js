@@ -30,7 +30,7 @@ class Dao {
 
         let cursor = this._requestStore().openCursor()
 
-        let assombracoes = []
+        let data = []
 
         cursor.onsuccess = e => {
 
@@ -39,11 +39,11 @@ class Dao {
           if(atual) {
 
             let dado = atual.value
-            assombracoes.push(dado)
+            data.push(dado)
             atual.continue()
 
           }else {
-            resolve(assombracoes)
+            resolve(data)
           }
         }
 

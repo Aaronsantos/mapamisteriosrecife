@@ -1,15 +1,17 @@
 class Assombracao {
 
-  constructor(id, nome, coords, local, descricao,epoca) {
+  constructor(nome, json,status) {
 
-      this._id = id;
+      this._id = json.id;
       this._nome = nome;
-      this._local = local; //DESCRIÇÃO TEXTUAL DA LOCALIZAÇÃO
-      this._coords = coords; //COORDS DOS LOCAIS DE APARIÇÃO NO FORMATO {lat: , lng: }
-      this._descricao = descricao; //TEXTO DESCRIÇÃO
-      this._epoca = epoca; //EPOCA DE APARIÇÃO OU CONSTRUÇÃO
-      this._img = [] //IMGS
-      this._range = 10 //RANGE DE DETECÇÃO 
+      this._local = json.local; //DESCRIÇÃO TEXTUAL DA LOCALIZAÇÃO
+      this._coords = json.coords; //COORDS DOS LOCAIS DE APARIÇÃO NO FORMATO {lat: , lng: }
+      this._descricao = json.descricao; //TEXTO DESCRIÇÃO
+      this._epoca = json.epoca; //EPOCA DE APARIÇÃO OU CONSTRUÇÃO
+      this._img = json.img //IMGS
+      this._range = json.range //RANGE DE DETECÇÃO
+      this._status = status
+      this._tipo = json.tipo
   }
 
   addImg(source, alttext){
@@ -49,5 +51,14 @@ class Assombracao {
   get img() {
 
     return [].concat(this._img)
+  }
+
+  get tipo() {
+
+    return this._tipo
+  }
+
+  get status() {
+    return this._status
   }
 }
