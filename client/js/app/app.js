@@ -1,32 +1,41 @@
 
 class Controller {
 
-constructor () {
+constructor() {
 
-      ConnectionFactory.getConnection()
-        .then( conexao => new AssombracaoDao(conexao).getAssombracoes())
-        .then(list => {
-          if(list.length > 0)
-            this._assombracoes = list
-          else console.log('Requisição...')
-            //ASSOMBRAÇÃO SERVICE:
-              //REALIZAR REQUISIÇÃO
-              //ADICIONAR EM _assombracoes
-              //PERSISTIR NO IDB
-        })
-
-      //this._mapa = document.querySelector('#mapa')
+  let service = new AssombracaoService()
+    service
+    .requestAssombracoes()
+    .then( list => {
+      console.log(list)
+      this._assombracoes = list
       this._user = null //localização do usuario
       this._assombracoesInRange = []
       this._assombracoesDescobertas = [] //log de descobertas
+
+      this._catalogView = new CatalogoView(document.querySelector('#catalog'))
+      this._catalogView.update(this._assombracoes.assombracoes)
+    })
+
+      //this._mapa = document.querySelector('#mapa')
+
   }
 
-_checkLocalStore(){
-
-  return ConnectionFactory.getConnection()
-  .then( conexao => new AssombracaoDao(conexao).getAssombracoes())
-  .then(list => list.length > 0)
+get assombracoes() {
+  return (this._assombracoes.assombracoes)
 }
 
+get userLocation(){
+  return this._user
+}
+
+get assombracoesPerto(){
+  //TODO: IMPLEMENTAR CARREGAMENTO E VIEW
+}
+
+get assombracoesDescobertas() {
+
+  //TODO: implementar separação das assombracoes descobertas
+}
 
 }

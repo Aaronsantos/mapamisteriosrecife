@@ -10,7 +10,7 @@ window.onclick = function(event){
 
 }
 
-class modalHTML{
+class ModalHTML{
 
   static geraModalInfo(a){
 
@@ -30,7 +30,7 @@ class modalHTML{
           texto.forEach( p => result += `<p class="textbody1">${p}</p>`)
 
           result += ` </section> <section class="picSec">`
-    
+
 
           a.img.forEach( img => result +=`<img src="${img.src}" alt="${img.alt}">`)
 

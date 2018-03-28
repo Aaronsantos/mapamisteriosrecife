@@ -52,8 +52,16 @@
 }
 
 .footerSec {
-  border-top: 6px solid #d03e35;
-  min-height: 130px;
+  /*border-top: 6px solid #d03e35;*/
+  min-height: 50px;
   padding: 2em;
   box-sizing: border-box;
+  position: relative;
+  bottom: 0;
+}
+
+@media (max-width: 799px){
+  .footerSec{
+    display: none;
+  }
 }

@@ -1,0 +1,32 @@
+.card {
+  display: inline-block;
+  style: none;
+  text-decoration: none;
+}
+
+.card:hover .card-content{
+
+  transition:  all .3s;
+  transform: scale(1.05)
+}
+
+.card .card-content{
+  flex-flow: wrap;
+  transition:  all .5s;
+  display: flex;
+  width: 250px;
+  height: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card-content .card-pic {
+  width: 49%;
+  height: 70%;
+  margin-left: 1%;
+}
+
+.card-content .card-info {
+  width: 49%;
+  height: 70%;
+}
