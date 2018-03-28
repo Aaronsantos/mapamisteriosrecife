@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/stage.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/cards.css">
   </head>
   <body>
 
@@ -24,9 +25,41 @@
         </ul>
       </div>
     </nav>
-    <header class="container colorBgLigthGrey stage">
-          <img src="img/logo.svg" alt="Mapa de mistérios do Recife" class="bannerLogo">
-    </header>
+
+    <main class="stage">
+
+      <header class="container  ">
+        <img src="img/logo.svg" alt="Mapa de mistérios do Recife" class="bannerLogo">
+      </header>
+
+      <section id="catalog">
+          <!-- <a href="#" class="card">
+            <div class="card-content colorBgRed">
+                <h1 class="textdisplay1 colorTxtWhite">Teste</h1>
+            </div>
+          </a> -->
+      </section>
+
+      <section>
+
+      </section>
+
+      <section>
+
+      </section>
+      <footer class=" alignCenter footerSec">
+        <a href="#" class="textbutton textBlock alingRight colorTxtWhite">Ir para o topo</a>
+        <ul class="linkList">
+          <li class="linkInline"><a href="#" class="linkInline colorTxtWhite textbody2">Sobre - </a></li>
+          <li class="linkInline"><a href="#" class="linkInline colorTxtWhite textbody2">Referências - </a></li>
+          <li class="linkInline"><a href="#" class="linkInline colorTxtWhite textbody2">Textos - </a></li>
+          <li class="linkInline"><a href="#" class="linkInline colorTxtWhite textbody2">Contato - </a></li>
+          <li class="linkInline"><a href="#" class="linkInline colorTxtWhite textbody2">Código Fonte </a></li>
+        </ul>
+
+        <p class="textbody2 colorTxtBrown">Criado e mantido por <a class="colorTxtWhite" href="#">@aarons</a></p>
+      </footer>
+    </main>
 
     <script src="js/app/models/Assombracao.js"></script>
     <script src="js/app/models/ListaAssombracao.js"></script>
@@ -43,17 +76,23 @@
     <script src="js/app/dao/AssombracaoDao.js"></script>
     <script src="js/app/services/HttpService.js"></script>
     <script src="js/app/services/AssombracaoService.js"></script>
+    <script src="js/app/views/View.js"></script>
+    <script src="js/app/views/CatalogView.js"></script>
     <script src="js/app/app.js">
 
     </script>
-    <script type="text/javascript">
+
+    <script>
+        let app  = new Controller()
+    </script>
+    <!-- <script type="text/javascript">
     //TESTE DO BD
       fetch("https://mapa-misterios-recife.firebaseio.com/assombracoes.json")
       .then( resp => resp.json())
       .then(assombracoes => {
         console.log(assombracoes)
       })
-    </script>
+    </script> -->
 
   <!--  <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2uPawOPYriT7y7vdd0OeNp_JButueuvE">
