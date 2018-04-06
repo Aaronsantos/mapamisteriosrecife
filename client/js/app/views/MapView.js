@@ -1,11 +1,11 @@
 class MapView{
 
-  static generateMap(position, style, tag, list) {
+  static generateMap(position, tag, list) {
 
-    var map = new google.maps.Map(tag, {
+    let map = new google.maps.Map(tag, {
       zoom: 19,
       center: position,
-      styles: style
+      styles: MapView._getMapStyle()
     });
     //teste renderizar marcador
     // let userMarker = new google.maps.Marker({
@@ -36,9 +36,11 @@ class MapView{
 
 
     })
+
+    return map
   }
 
-  static getMapStyle(id) {
+  static _getMapStyle(id) {
 
     return [{
               "stylers": [

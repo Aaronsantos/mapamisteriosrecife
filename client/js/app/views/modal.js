@@ -1,67 +1,67 @@
 
-const modal = document.querySelector('.modal')
+const modal = document.querySelector('#modal')
 window.onclick = function(event){
 
   if(event.target == modal ){
-
     modal.style.display = 'none'
-
   }
 
 }
 
 class ModalHTML{
 
-  static geraModalInfo(a){
+  constructor(tag){
 
-      let texto = a.descricao.split('\n')
-      let result =
-      `<div class="infoModal colorBgWhite">
-        <header class="colorBgRed">
-          <h1 class="texttitle colorTxtWhite">${a.nome}</h1>
-        </header>
-        <section>
-          <ul class="panel">
-            <li class="textbody2">Local: <strong class="colorTxtRed">${a.local}</strong></li>
-            <li class="textbody2">Época: <strong class="colorTxtRed">${a.epoca}</strong></li>
-          </ul> `
+    this._titulo = tag.querySelector('header h1')
+    this._img = tag.querySelector('.picSec img')
+    this._infoList = tag.querySelectorAll('.infoSec ul li')
+    this._text = tag.querySelector('.textSec')
+    this._Mapbutton = tag.querySelector('input[name="goMap"]')
 
+    this._close = tag.querySelector('input[name="close"]')
 
-          texto.forEach( p => result += `<p class="textbody1">${p}</p>`)
+    this._close.onclick = function(event) {
+      modal.style.display = 'none'
+    }
 
-          result += ` </section> <section class="picSec">`
-
-
-          a.img.forEach( img => result +=`<img src="${img.src}" alt="${img.alt}">`)
-
-          result += `</section></div>`
-
-        modal.innerHTML = result;
-
-        modal.style.display = 'block'
   }
 
-  static geraModalDistante(a){
+  _update(a) {
+
+    console.log('criou')
+
+    this._titulo.innerText = a.nome
+
+    this._img.src = a.img != false ? a.img : "img/monstesNoPic.png"
+    this._img.alt = a.nome
+
+    let sections = ['local', 'epoca', 'tipo' ]
+    let cont = 0
+    this._infoList.forEach(li => {
+      li.innerText = `${sections[cont]}: ${a[sections[cont]]}`
+      cont++
+    })
+
     let texto = a.descricao.split('\n')
-    let result =
-    `<div class="infoModal colorBgWhite">
-      <header class="colorBgRed">
-        <h1 class="texttitle colorTxtWhite">${a.nome}</h1>
-      </header>
-      <section>
-        <ul class="panel">
-          <li class="textbody2">Local: <strong class="colorTxtRed">${a.local}</strong></li>
-          <li class="textbody2">Época: <strong class="colorTxtRed">???</strong></li>
-        </ul> `
 
-        result += `<p> Você se encontra distânte desta assombração deseja saber como chegar até ela?</p>`
+    this._text.innerText = ''
+    texto.forEach( par => {
+      let p = document.createElement('p')
+      p.classList.add('textbody1')
+      p.innerText = par
+      this._text.appendChild(p)
+    })
 
-        result += ` </section> </div>`
+    modal.style.display = 'block'
 
-
-      modal.innerHTML = result;
-
-      modal.style.display = 'block'
+    //this._Mapbutton.onclick = TODO ABRIR MAPA
   }
 
+  open(a){
+    if(this._titulo.innerText == a.nome)
+      modal.style.display = 'block'
+    else {
+      this._update(a)
+    }
+  }
 }

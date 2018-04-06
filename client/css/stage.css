@@ -1,11 +1,14 @@
 
 .stage {
-  text-align: center;
   min-height: 100vh;
   color: white;
   /*border-bottom: 6px solid #d03e35;*/
   background-image: linear-gradient(rgba(208,62,53, 0.7) 30% ,rgba(40,40,40, 0.9) 80% ), url(../img/bg3.png);
   background-size: cover;
+}
+
+.stage > header {
+    text-align: center;
 }
 
 header > .bannerLogo{
@@ -26,11 +29,7 @@ header > .bannerLogo{
   margin: auto;
 }
 
-.stage  .button{
-  width: 60vw;
-  height: 4em;
-  padding-top: 1.5em;
-}
+
 
 @media (max-width: 999px){
 
@@ -58,8 +57,4 @@ header > .bannerLogo{
     transition: all 0.4s;
   }
 
-  .stage .button{
-    width: 20vw;
-    transition: all 0.4s;
-  }
 }

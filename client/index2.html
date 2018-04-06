@@ -19,7 +19,7 @@
     <nav class="mainMenu">
       <div class="menuContent ">
         <ul>
-          <li class="menuListItem textbutton"> <a class="colorTxtWhite" href="#"> <img class="menuIcon" src="img/icon.png" alt="">  <p>Por perto</p></a></li>
+          <li name="porPerto" class="menuListItem textbutton"> <a class="colorTxtWhite" href="#"> <img class="menuIcon" src="img/icon.png" alt="">  <p>Por perto</p></a></li>
           <li class="menuListItem textbutton">  <a class="colorTxtWhite" href="#"> <img class="menuIcon" src="img/icon.png" alt=""> <p>Catálogo</p></a></li>
           <li class="menuListItem textbutton">  <a class="colorTxtWhite" href="#"> <img class="menuIcon" src="img/icon.png" alt=""> <p>Sobre</p></a></li>
         </ul>
@@ -32,7 +32,12 @@
         <img src="img/logo.svg" alt="Mapa de mistérios do Recife" class="bannerLogo">
       </header>
 
-      <section id="catalog">
+    <section id="map" class="fullContainer">
+
+    </section>
+
+      <section id="catalog" class="container">
+        <h2 class=" textdisplay3 colorTxtWhite panel">Catálogo</h2>
           <!-- <a href="#" class="card">
             <div class="card-content colorBgRed">
                 <h1 class="textdisplay1 colorTxtWhite">Teste</h1>
@@ -40,13 +45,35 @@
           </a> -->
       </section>
 
-      <section>
+        <div id="modal">
+          <div class="infoModal colorBgLigthGrey">
+                <header class="colorBgRed">
+                  <h1 class="texttitle colorTxtWhite"></h1>
+                  <input type="button" class="button colorBgLigthGrey textbutton colorTxtRed" value="X" name="close">
+                </header>
+                <div class="modalContainer">
+                  <section class="picSec">
+                  <img src="img/monstesNoPic.png" alt="${a.nome}">
+                  </section>
 
-      </section>
+                  <section class="infoSec colorBgRed colorTxtBlack">
+                    <ul class="textbody2">
+                      <li>Local: <strong class="colorTxtWhite">${a.local}</strong></li>
+                      <li>Época: <strong class="colorTxtWhite">${a.epoca}</strong></li>
+                      <li>ASSOMBRAÇÃO </li>
+                    </ul>
+                  </section>
 
-      <section>
+                  <section class="textSec">
 
-      </section>
+                    <p class="textbody1">Ele aborda caminhantes solitários que vagam pelas ruas desertas e sempre pede fogo a esses desavisados – gente que sai de festa ou de barezinhos da moda do Bairro do Recife, por exemplo.</p><p class="textbody1"> Tendo ou não fósforo (ou isqueiro) para oferecer, a vítima toma um grande susto quando percebe que boêmio misterioso tem a cara carcomida de um cadáver apodrecido e exala um forte cheiro de enxofre.</p> </section>
+
+                    <button type="button" class="button colorTxtWhite colorBgRed textbutton" name="goMap">Ver no Mapa</button>
+                    </div>
+
+                  </div>
+                </div>
+
       <footer class=" alignCenter footerSec">
         <a href="#" class="textbutton textBlock alingRight colorTxtWhite">Ir para o topo</a>
         <ul class="linkList">
@@ -81,6 +108,9 @@
     <script src="js/app/app.js">
 
     </script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2uPawOPYriT7y7vdd0OeNp_JButueuvE">
+    </script>
 
     <script>
         let app  = new Controller()
@@ -94,9 +124,6 @@
       })
     </script> -->
 
-  <!--  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2uPawOPYriT7y7vdd0OeNp_JButueuvE">
-  </script> -->
 
   </body>
 </html>

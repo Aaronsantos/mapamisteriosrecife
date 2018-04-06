@@ -2,6 +2,7 @@
   display: inline-block;
   style: none;
   text-decoration: none;
+  cursor: pointer; 
 }
 
 .card:hover .card-content{
@@ -29,4 +30,8 @@
 .card-content .card-info {
   width: 49%;
   height: 70%;
+}
+
+.card-content .card-info li{
+  margin-top: 10px;
 }
