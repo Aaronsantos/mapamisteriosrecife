@@ -38,7 +38,9 @@ class LocationService{
         let user = {lat : loc.coords.latitude, lng : loc.coords.longitude}
         resolve(user)
       } )
-      .catch(e => reject(e))
+      .catch(e => {
+          reject(e)
+      })
     })
   }
 

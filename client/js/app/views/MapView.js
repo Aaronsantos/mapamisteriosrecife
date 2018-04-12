@@ -1,6 +1,6 @@
 class MapView{
 
-  static generateMap(position, tag, list) {
+  static generateMap(position, tag, list, modal) {
 
     let map = new google.maps.Map(tag, {
       zoom: 19,
@@ -24,17 +24,9 @@ class MapView{
         map: map
       })
 
-      if(LocationService.isInSpaceRange(a.coords, position, a.range)) {
         marker.addListener('click', function(){
-          modalHTML.geraModalInfo(a)
+          modal.open(a)
         })
-      }else {
-        marker.addListener('click', function(){
-          modalHTML.geraModalDistante(a)
-        })
-      }
-
-
     })
 
     return map

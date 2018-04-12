@@ -19,9 +19,9 @@
     <nav class="mainMenu">
       <div class="menuContent ">
         <ul>
-          <li name="porPerto" class="menuListItem textbutton"> <a class="colorTxtWhite" href="#"> <img class="menuIcon" src="img/icon.png" alt="">  <p>Por perto</p></a></li>
-          <li class="menuListItem textbutton">  <a class="colorTxtWhite" href="#"> <img class="menuIcon" src="img/icon.png" alt=""> <p>Catálogo</p></a></li>
-          <li class="menuListItem textbutton">  <a class="colorTxtWhite" href="#"> <img class="menuIcon" src="img/icon.png" alt=""> <p>Sobre</p></a></li>
+          <li id="porPertoBtn" class="menuListItem textbutton"> <a class="colorTxtWhite" href="#"> <img class="menuIcon" src="img/icon.png" alt="">  <p>Por perto</p></a></li>
+          <li id="satalogBtn" class="menuListItem textbutton">  <a class="colorTxtWhite" href="#"> <img class="menuIcon" src="img/icon.png" alt=""> <p>Catálogo</p></a></li>
+          <li id="sobreBtn" class="menuListItem textbutton">  <a class="colorTxtWhite" href="#"> <img class="menuIcon" src="img/icon.png" alt=""> <p>Sobre</p></a></li>
         </ul>
       </div>
     </nav>
@@ -114,6 +114,7 @@
 
     <script>
         let app  = new Controller()
+        app.init()
     </script>
     <!-- <script type="text/javascript">
     //TESTE DO BD

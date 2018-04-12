@@ -5,6 +5,7 @@ class Assombracao {
       this._id = json.id;
       this._nome = nome;
       this._local = json.local; //DESCRIÇÃO TEXTUAL DA LOCALIZAÇÃO
+      this._localCurto = json.localCurto
       this._coords = json.coords; //COORDS DOS LOCAIS DE APARIÇÃO NO FORMATO {lat: , lng: }
       this._descricao = json.descricao; //TEXTO DESCRIÇÃO
       this._epoca = json.epoca; //EPOCA DE APARIÇÃO OU CONSTRUÇÃO
@@ -18,6 +19,11 @@ class Assombracao {
     this._img.push({src: source, alt: alttext})
   }
 
+  get localCurto() {
+
+    return this._localCurto
+  }
+  
   get nome() {
 
     return this._nome;

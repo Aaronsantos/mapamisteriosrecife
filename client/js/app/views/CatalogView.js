@@ -29,8 +29,8 @@ class CatalogoView extends View {
 
 
       cardContent.innerHTML = `<img src="img/monstesNoPic.png" class="card-pic">
-                              <div class="card-info"> <ul> <li class="textbody1">${assombracao.local}</li>
-                              <li class="textbody1">${assombracao.tipo == 1 ? "Entidade" : (assombracao.tipo == 2 ? "Local Assombrado" : "Local Misterioso")}</li> </ul> </div>
+                              <div class="card-info"> <ul> <li class="textbody1">${assombracao.localCurto}</li>
+                              <li class="textbody1">${assombracao.tipo}</li> </ul> </div>
                               <h2 class="textdisplay1 ">${assombracao.nome}</h2>`
 
 
