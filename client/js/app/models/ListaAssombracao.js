@@ -1,4 +1,6 @@
-class ListaAssombracao {
+import {Assombracao} from './Assombracao.js'
+
+export class ListaAssombracao {
 
   constructor (assombracoes){
 

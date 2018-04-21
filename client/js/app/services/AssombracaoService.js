@@ -1,4 +1,12 @@
-class AssombracaoService {
+
+import {Assombracao} from '../models/Assombracao.js'
+import {ListaAssombracao} from '../models/ListaAssombracao.js'
+import {HttpService} from './HttpService.js'
+import {ConnectionFactory} from './ConnectionFactory.js'
+import {AssombracaoDao} from '../dao/AssombracaoDao.js'
+import {LogDao} from '../dao/LogDao.js'
+
+export class AssombracaoService {
 
   constructor() {
 

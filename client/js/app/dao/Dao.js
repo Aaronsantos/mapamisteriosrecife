@@ -1,4 +1,4 @@
-class Dao {
+export class Dao {
 
   constructor (connection,store) {
 

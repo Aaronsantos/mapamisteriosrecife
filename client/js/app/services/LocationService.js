@@ -1,7 +1,4 @@
-
-var user;
-
-class LocationService{
+export class LocationService{
 
 
   constructor(){

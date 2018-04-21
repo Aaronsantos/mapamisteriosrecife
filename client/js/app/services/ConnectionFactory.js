@@ -1,4 +1,4 @@
-var ConnectionFactory  = (function () {
+export var ConnectionFactory  = (function () {
 
   var stores = ['assombracoes','version','log']
   var version = 2

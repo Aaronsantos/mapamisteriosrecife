@@ -1,14 +1,5 @@
 
-const modal = document.querySelector('#modal')
-window.onclick = function(event){
-
-  if(event.target == modal ){
-    modal.style.display = 'none'
-  }
-
-}
-
-class ModalHTML{
+export class ModalHTML{
 
   constructor(tag){
 
@@ -22,6 +13,15 @@ class ModalHTML{
 
     this._close.onclick = function(event) {
       modal.style.display = 'none'
+    }
+
+
+    let modal = document.querySelector('#modal')  
+    window.onclick = function(event){
+
+    if(event.target == modal ){
+      modal.style.display = 'none'
+      }
     }
 
   }

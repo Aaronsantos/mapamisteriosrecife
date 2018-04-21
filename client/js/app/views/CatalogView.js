@@ -1,4 +1,6 @@
-class CatalogoView extends View {
+import {View} from './View.js'
+
+export class CatalogoView extends View {
 
 
   constructor(tag,modal){

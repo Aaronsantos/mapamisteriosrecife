@@ -1,4 +1,4 @@
-class GetKey{
+export class GetKey{
 
   static GoogleMapkey(){
 

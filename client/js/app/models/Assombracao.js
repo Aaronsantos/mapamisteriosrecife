@@ -1,4 +1,4 @@
-class Assombracao {
+export class Assombracao {
 
   constructor(nome, json,status) {
 

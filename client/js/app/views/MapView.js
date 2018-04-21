@@ -1,4 +1,4 @@
-class MapView{
+export class MapView{
 
   static generateMap(position, tag, list, modal) {
 
